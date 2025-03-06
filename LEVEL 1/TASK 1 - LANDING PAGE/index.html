@@ -4,278 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Landing Page</title>
-        <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        header {
-            background-color: #081F5C;
-            padding: 20px 50px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2em;
-            font-weight: bold;
-            color: #333;
-            font-family: serif;
-            font-style: italic;
-            color: rgb(247, 26, 129);
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-        }
-        .nav-links a:hover{
-            color: rgb(247, 26, 129);
-            cursor: pointer;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://theperfecthair.co.za/wp-content/uploads/2022/10/IMG_5292-scaled.jpg');
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            padding: 0 100px;
-            color: white;
-        }
-
-        .hero-content {
-            max-width: 600px;
-        }
-
-        .hero-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .cta-button {
-            padding: 15px 30px;
-            background-color: rgb(247, 26, 129);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: rgb(248, 82, 160);
-        }
-        
-
-        .about {
-            padding: 80px 50px;
-            background-color: #f9fcff;
-        }
-
-        .about-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-            color: #666;
-        }
-
-        .about-image {
-            margin-top: 40px;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .features {
-            padding: 80px 50px;
-            background-color: #f9f9f9;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .feature-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-card img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            margin: 20px 0;
-            color: #333;
-        }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .feature-card .price {
-            font-size: 1.25rem;
-            color: rgb(248, 82, 160);
-            font-weight: bold;
-            margin: 15px 0;
-        }
-
-        .contact {
-            padding: 80px 50px;
-            background-color: #f9fcff;
-        }
-
-        .contact-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .contact-info {
-            padding: 20px;
-        }
-
-        .contact-info p {
-            margin: 15px 0;
-            color: #666;
-        }
-
-        footer {
-            background-color: #081f5c;
-            color: #fff;
-            padding: 60px 50px 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section h4 {
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .footer-section p {
-            color: #ccc;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul li a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section ul li a:hover {
-            color: rgb(248, 82, 160);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 20px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #555;
-            color: #888;
-            font-size: 14px;
-        }
-    </style>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header>
@@ -297,13 +26,13 @@
                     designed to nourish, strengthen, and beautify your hair.
                     Made with the finest ingredients for exceptional
                     results.</p>
-                <button type="button" class="cta-button">Shop Now</button>
+                <button type="button" class="cart-button">Shop Now</button>
             </div>
         </section>
 
         <section class="about" id="about">
             <div class="about-content">
-                <h2 style="text-align: center; margin-bottom: 20px;">About
+                <h2>About
                     Us</h2>
                 <p>Welcome to HairVana, your ultimate destination for all
                     your hair care needs. We are a team of hair care experts who
@@ -320,7 +49,7 @@
                     Our products are designed to be effective, safe, and
                     gentle, so you can achieve the hair you've always wanted
                     without compromising your health or the environment.</p>
-                <button type="button" class="cta-button">Learn More</button>
+                <button type="button" class="cart-button">Learn More</button>
                 <div class="about-image">
                     <img
                         src="https://baskandlatherco.com/cdn/shop/files/DSC07074.jpg?v=1717692466&width=1311"
@@ -330,40 +59,55 @@
         </section>
 
         <section class="features" id="products">
-            <h2 style="text-align: center; margin-bottom: 20px;">Our Products</h2>
+            <h2>Our Products</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <img src="https://www.earthraga.com/cdn/shop/files/onion-shampoo-5_1500x.png?v=1721049667" alt="Natural Shampoo">
+                    <img
+                        src="https://www.earthraga.com/cdn/shop/files/onion-shampoo-5_1500x.png?v=1721049667"
+                        alt="Natural Shampoo">
                     <h3>Onion Shampoo</h3>
-                    <p>Gentle cleansing with natural ingredients that protect and nourish your hair.</p>
+                    <p>Gentle cleansing with natural ingredients that protect
+                        and nourish your hair.</p>
                     <div class="price">Ksh 5,000.00</div>
-                    <button class="cta-button">Add to Cart</button>
+                    <button type="button" class="cart-button">Add to
+                        Cart</button>
                 </div>
                 <div class="feature-card">
-                    <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/conditioner/k/7/e/-original-imagvjmtntqkxnyp.jpeg?q=20&crop=false" alt="Hair Conitioner">
+                    <img
+                        src="https://rukminim2.flixcart.com/image/850/1000/xif0q/conditioner/k/7/e/-original-imagvjmtntqkxnyp.jpeg?q=20&crop=false"
+                        alt="Hair Conitioner">
                     <h3>WOW SKIN SCIENCE Hair Conditioner</h3>
-                    <p>Deep conditioning treatment that repairs and strengthens damaged hair.</p>
+                    <p>Deep conditioning treatment that repairs and strengthens
+                        damaged hair.</p>
                     <div class="price">Ksh 700.00</div>
-                    <button class="cta-button">Add to Cart</button>
+                    <button type="button" class="cart-button">Add to
+                        Cart</button>
                 </div>
                 <div class="feature-card">
-                    <img src="https://cdn.shopify.com/s/files/1/0571/8838/4931/files/1_d5699e0f-99c1-47e7-97e4-0f1c61dac389.jpg?v=1727784071" alt="Hair Oils">
+                    <img
+                        src="https://cdn.shopify.com/s/files/1/0571/8838/4931/files/1_d5699e0f-99c1-47e7-97e4-0f1c61dac389.jpg?v=1727784071"
+                        alt="Hair Oils">
                     <h3>The Skin Story Ayurvedic Hair Growth Oil</h3>
                     <p>Nourishes hair | Promotes hair growth.</p>
                     <div class="price">Ksh 365.00</div>
-                    <button class="cta-button">Add to Cart</button>
+                    <button type="button" class="cart-button">Add to
+                        Cart</button>
                 </div>
                 <div class="feature-card">
-                    <img src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/10/8894262/1.jpg?1191" alt="Styling Products">
+                    <img
+                        src="https://ke.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/10/8894262/1.jpg?1191"
+                        alt="Styling Products">
                     <h3>Aloe Vera Soothing Gel</h3>
-                    <p>Professional-grade styling solutions for any hair type.</p>
+                    <p>Professional-grade styling solutions for any hair
+                        type.</p>
                     <div class="price">Ksh 999.00</div>
-                    <button class="cta-button">Add to Cart</button>
+                    <button type="button" class="cart-button">Add to
+                        Cart</button>
                 </div>
             </div>
         </section>
         <section class="contact" id="contact">
-            <h2 style="text-align: center; margin-bottom: 20px;">Contact Us</h2>
+            <h2>Contact Us</h2>
             <div class="contact-content">
                 <div class="contact-form">
                     <h3>Get in Touch</h3>
@@ -374,7 +118,7 @@
                             placeholder="Your Email" required>
                         <textarea name="message" placeholder="Your Message"
                             required></textarea>
-                        <button type="submit" class="cta-button">Send
+                        <button type="submit" class="cart-button">Send
                             Message</button>
                     </form>
                 </div>
@@ -420,11 +164,11 @@
                     <h4>Newsletter</h4>
                     <p>Subscribe to our newsletter for updates and exclusive
                         offers.</p>
-                    <form style="margin-top: 15px;">
+                    <form>
                         <input type="email" placeholder="Enter your email"
                             style="padding: 10px; width: 100%; margin-bottom: 10px; border: none; border-radius: 5px;">
-                        <button type="submit" class="cta-button"
-                            style="width: 100%;">Subscribe</button>
+                        <button type="submit" class="cart-button"
+                            id="subscribe">Subscribe</button>
                     </form>
                 </div>
             </div>
