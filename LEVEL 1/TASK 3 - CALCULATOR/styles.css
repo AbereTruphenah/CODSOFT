@@ -1,0 +1,49 @@
+.container{
+    background: rgb(49, 49, 49);
+    width: 280px;
+    padding-top: 30px;
+}
+.display{
+    background: gainsboro;
+    width: 230px;
+    height: 50px;
+    margin: auto;
+    position: relative;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+}
+.expression {
+    background: transparent;
+    min-height: 20px;
+    font-size: 1.5em;
+}
+.result {
+    background: transparent;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.buttons{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 10px;
+}
+.button{
+    background: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 18px;
+    font-size: 1.5em;
+    font-weight:bold;
+    box-shadow: 1px white;
+    margin: 5px;
+}
+#delete{
+    background: brown;
+    padding: 5px 3px
+}
