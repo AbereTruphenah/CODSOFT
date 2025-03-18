@@ -1,4 +1,12 @@
-.container{
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: rgb(168, 168, 245);
+}
+.calculator{
     background: rgb(49, 49, 49);
     width: 280px;
     padding-top: 30px;
@@ -43,7 +51,20 @@
     box-shadow: 1px white;
     margin: 5px;
 }
-#delete{
+.button:hover {
+    background-color: rgb(31, 30, 30);
+}
+
+#clearBtn{
     background: brown;
-    padding: 5px 3px
+}
+#deleteBtn{
+    padding: 4px 1px
+}
+
+@media (max-width: 400px) {
+    .button {
+        font-size: 1.2em;
+        padding: 15px;
+    }
 }

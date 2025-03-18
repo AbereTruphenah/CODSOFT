@@ -3,116 +3,61 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Calculator</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="container">
-            <div class="display">
+        <div class="calculator">
+            <div class="display" id="display">
                 <div class="expression"></div>
                 <div class="result"></div>
             </div>
             <div class="buttons">
-                <button type="button" class="button" id="key-seven">7</button>
-                <button type="button" class="button" id="key-eight">8</button>
-                <button type="button" class="button" id="key-nine">9</button>
-
-                <button type="button" class="button" id="delete">←</button>
-                <button type="button" class="button" id="key-four">4</button>
-                <button type="button" class="button" id="key-five">5</button>
-                <button type="button" class="button" id="key-six">6</button>
                 <button type="button" class="button"
-                    id="multiplication">×</button>
-                <button type="button" class="button" id="key-one">1</button>
-                <button type="button" class="button" id="key-two">2</button>
-                <button type="button" class="button" id="key-three">3</button>
-                <button type="button" class="button" id="division">÷</button>
-                <button type="button" class="button" id="key-zero">0</button>
-                <button type="button" class="button" id="addition">+</button>
-                <button type="button" class="button" id="subtraction">-</button>
-                <button type="button" class="button" id="equal">=</button>
+                    onclick="appendToDisplay('7')">7</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('8')">8</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('9')">9</button>
+                <button type="button" class="button" id="clearBtn"
+                    onclick="clearDisplay()">C</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('4')">4</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('5')">5</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('6')">6</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('*')">×</button>
+
+                <button type="button" class="button"
+                    onclick="appendToDisplay('1')">1</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('2')">2</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('3')">3</button>
+                <button type="button" class="button" id="deleteBtn"
+                    onclick="deleteLast()">DEL</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('/')">÷</button>
+
+                <button type="button" class="button"
+                    onclick="appendToDisplay('-')">-</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('(')">(</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay(')')">)</button>
+
+                <button type="button" class="button"
+                    onclick="appendToDisplay('+')">+</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('0')">0</button>
+                <button type="button" class="button"
+                    onclick="appendToDisplay('.')">.</button>
+                <button type="button" class="button"
+                    onclick="calculate()">=</button>
             </div>
         </div>
-        <script>
-            const display = document.querySelector('.display');
-            const expression = document.querySelector('.expression');
-            const result = document.querySelector('.result');
-            const buttons = document.querySelectorAll('.button');
-            let firstNumber = '';
-            let operator = '';
-            let secondNumber = '';
-            let calculatedResult = '';
-    
-            buttons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const value = button.textContent;
-    
-                    // If the button is ←
-                    if (value === '←') {
-                        if (secondNumber !== '') {
-                            // Delete last digit from second number
-                            secondNumber = secondNumber.slice(0, -1);
-                            expression.textContent = firstNumber + ' ' + operator + ' ' + secondNumber;
-                        } else if (operator !== '') {
-                            // Delete operator
-                            operator = '';
-                            expression.textContent = firstNumber;
-                        } else if (firstNumber !== '') {
-                            // Delete last digit from first number
-                            firstNumber = firstNumber.slice(0, -1);
-                            expression.textContent = firstNumber;
-                        }
-                        result.textContent = '';
-                    }
-                    // If the button is a number
-                    else if (!isNaN(value)) {
-                        if (operator === '') {
-                            firstNumber += value;
-                            expression.textContent = firstNumber;
-                        } else {
-                            secondNumber += value;
-                            expression.textContent = firstNumber + ' ' + operator + ' ' + secondNumber;
-                        }
-                    }
-                    // If the button is an operator (+, -, ×, ÷)
-                    else if (['+', '-', '×', '÷',].includes(value)) {
-                        if (firstNumber !== '') {
-                            operator = value;
-                            expression.textContent = firstNumber + ' ' + operator;
-                            result.textContent = '';
-                        }
-                    }
-                    // If the button is equals (=)
-                    else if (value === '=') {
-                        if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
-                            const num1 = parseFloat(firstNumber);
-                            const num2 = parseFloat(secondNumber);
-    
-                            switch (operator) {
-                                case '+':
-                                    calculatedResult = num1 + num2;
-                                    break;
-                                case '-':
-                                    calculatedResult = num1 - num2;
-                                    break;
-                                case '×':
-                                    calculatedResult = num1 * num2;
-                                    break;
-                                case '÷':
-                                    calculatedResult = num1 / num2;
-                                    break;
-                            }
-    
-                            result.textContent = calculatedResult;
-                            // Reset values for next calculation
-                            firstNumber = calculatedResult.toString();
-                            operator = '';
-                            secondNumber = '';
-                            expression.textContent = '';
-                        }
-                    }
-                });
-            });
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
