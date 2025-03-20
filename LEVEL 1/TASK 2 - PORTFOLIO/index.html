@@ -4,155 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>my-portfolio</title>
-        <style>
-        *{
-            font-family: sans-serif;
-            background: #f9fcff;
-        }
-        h2{
-            color: limegreen;
-            font-family: serif;
-        }
-        header{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 20px 10px;
-        }
-        header .name{
-            font-size: 2em;
-            font-family: serif;
-            color: limegreen;
-        }
-        header .navigation ul{
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        header .navigation ul li a:link{
-            text-decoration: none;
-            color: limegreen;
-        }
-        header .navigation ul li a:hover{
-            padding: 5px;
-            background: lightgreen;
-            color: black;
-        }
-        header .navigation ul li a:visited, header .navigation ul li a:active{
-            color: grey;
-        }
-        .about{
-            text-align: center;
-        }
-        .about .about-content{
-            display: flex;
-            gap: 100px;
-            align-items: center;            
-            padding: 20px 10px;
-        }
-        .about .about-content .about-image{
-            border: none;
-            border-radius: 50%;
-            width: 170px;
-            height: 250px;
-        }
-        .experience{
-            text-align: center;
-        }
-        .experience .experience-content{
-            /*display: flex;
-            justify-content: space-between;
-            background: darkslategrey;
-            padding: 20px 10px;*/
-            display: grid;
-            gap: 10px;
-            grid-template-columns: auto auto auto;
-            overflow-y:auto;
-            max-height: 400px;
-        }
-        .experience .experience1{
-            width: 350px;
-            background: #f9f9f9;
-            margin-top: 5px;
-            border: 1px solid grey;
-            border-radius: 5px;
-        }
-        .skills{
-            text-align: center;
-        }
-        .skills .skills-content{
-            padding: 20px 10px;
-        }
-        
-        .skills .skills-content ul li{
-            list-style: none;
-        }
-        .projects{
-            text-align: center;
-            height: 90vh;
-        }
-        .projects .projects-content{
-            /*display: flex;
-            justify-content: space-evenly;
-            flex-wrap: wrap;
-            gap: 30px;
-            background: darkslategrey;
-            padding: 20px 20px;
-            max-height: 490px;
-            overflow-y: auto;*/
-            display: grid;
-            gap: 10px;
-            grid-template-columns: auto auto auto;
-            overflow-y:auto;
-            max-height: 400px;
-            margin-top: 5px;
-        }
-        .projects .projects-content .projects1{
-            background: #f9f9f9;
-            border: 1px solid grey;
-            border-radius: 5px;
-            width: 350px;
-            padding: 5px;
-
-        }
-        .buttons{
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-        }
-        .button{
-            background: rgb(56, 168, 56);
-            border: 1px solid grey
-            color: #ffffff;
-            padding: 7px;
-        }
-        .button:hover{
-            background: lightgreen;
-            cursor: pointer;
-        }
-        .contact{
-            text-align: center;
-        }
-        .contact .contact-content{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start; 
-            padding: 20px 10px;           
-        }
-        .contact .contact-content .contact-me{
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-direction: column;
-        }
-        .footer, .footer p{
-            text-align: center;
-            background: dimgrey;
-            padding: 5px;
-            margin-top: 10px;
-        }
-        
-    </style>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header>
@@ -175,28 +27,17 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <img src="image.jpg" alt="my-photo" class="about-image">
-                <p>I'm a software engineer majoring in front-end development.
-                    <br>I have proficiency in HTML, CSS, JavaScript and React
+                <p>I'm a software engineer majoring in front-end
+                    development.
+                    <br>I have proficiency in HTML, CSS, JavaScript and
+                    React
                     framework.<br>
-                    I'm also familiar with Python, Java, C and PHP.</p>
+                    I'm also familiar with Python, Java, C, NodeJS and PHP.</p>
             </div>
         </section>
         <section class="experience" id="experience">
             <h2>Experience</h2>
-            <div class="experience-content">
-                <div class="experience1">
-                    <h3>Dedan Kimathi University Of Technology</h3>
-                    <p>ICT intern </p>
-                </div>
-                <div class="experience1">
-                    <h3>Kenya Tea Development Agency Ltd</h3>
-                    <p>ICT intern.</p>
-                </div>
-                <div class="experience1">
-                    <h3>#####</h3>
-                    <p>Software development industrial attachkment.</p>
-                </div>
-            </div>
+            <div class="experience-content"></div>
         </section>
         <section class="skills" id="skills">
             <h2>Skills</h2>
@@ -211,66 +52,23 @@
         </section>
         <section class="projects" id="projects">
             <h2>Projects</h2>
-            <div class="projects-content">
-                <div class="projects1">
-                    <h3>Temperature Converter</h3>
-                    <p>An application for converting temperature from Celcius to Fahrenheit and vice versa.</p>
-                    <p>Tech Stack: JavaScript, HTML, CSS</p>
-                    <div class="buttons">
-                        <button type="button" class="button" id="temp">Live Demo</button>
-                        <button type="button" class="button" id="temp-code">View Code</button>
-                    </div>
-                </div>
-                <div class="projects1">
-                    <h3>Palindrome Checker</h3>
-                    <p>An application for checking if a word is a palindrome.</p>
-                    <p>Tech Stack: HTML, CSS, JavaScript</p>
-                    <div class="buttons">
-                        <button type="button" class="button" id="palindrome">Live Demo</button>
-                        <button type="button" class="button" id="palindrome-code">View Code</button>
-                    </div>
-                </div>
-                <div class="projects1">
-                    <h3>Light Bulb ON and OFF</h3>
-                    <p>An application for switching a light on and off.</p>
-                    <p>Tech Stack: JavaScript, HTML, CSS</p>
-                    <div class="buttons">
-                        <button type="button" class="button" id="bulb">Live Demo</button>
-                        <button type="button" class="button" id="bulb-code">View Code</button>
-                    </div>
-                </div>
-                <div class="projects1">
-                    <h3>Leads Tracker</h3>
-                    <p>An application for adding and deleting leads.</p>
-                    <p>Tech Stack: HTML, CSS, JavaScript</p>
-                    <div class="buttons">
-                        <button type="button" class="button" id="leads">Live Demo</button>
-                        <button type="button" class="button" id="leads-code">View Code</button>
-                    </div>
-                </div>
-                <div class="projects1">
-                    <h3>Random Number Generator</h3>
-                    <p>An application that generates random number between 0 and 100 (exclusive).</p>
-                    <p>Tech Stack: HTML, CSS, JavaScript</p>
-                    <div class="buttons">
-                        <button type="button" class="button" id="randomNum">Live Demo</button>
-                        <button type="button" class="button" id="randomNum-code">View Code</button>
-                    </div>
-                </div>
-            </div>
+            <div class="projects-content"></div>
         </section>
         <section class="contact" id="contact">
             <h2>Contact Me</h2>
             <div class="contact-content">
                 <div class="contact-me">
-                    <input type="email" placeholder="Enter your email address"
-                        style="width: 400px; height: 30px;"><br>
-                    <textarea cols="70" rows="10"
-                        placeholder="Message"></textarea><br>
-                    <button type="submit" class="button">Send Message</button>
+                    <input type="email" id="viewer-email"
+                        placeholder="Enter your email address"
+                        required><br>
+                    <textarea id="message" cols="70" rows="10"
+                        placeholder="Message" required></textarea><br>
+                    <button type="submit" class="button">Send
+                        Message</button>
                 </div>
                 <div class="contact-info">
-                    <p>Email: example@gmail.com</p>
+                    <p>Email: <a href="mailto:aberetruphenah@gmail.com"
+                            target="_blank">example@gmail.com</a></p>
                     <p>Phone/WhatsApp: +254 719 352732</p>
                     <p>GitHub: https//:github.com</p>
                     <p>LinkedIn: https//:linkedin.com</p>
@@ -281,40 +79,128 @@
             <p>&copy; 2025. All rights reserved.</p>
         </footer>
         <script>
-            const tempDemoBtn=document.getElementById('temp');
-            const tempCodeBtn=document.getElementById('temp-code');
-            const palindromeDemoBtn=document.getElementById('palindrome');
-            const palindromeCodeBtn=document.getElemntById('palindrome-code');
-            const bulbDemoBtn=document.getElementById('bulb');
-            const bulbCodeBtn=document.getElementById('bulb-code');
-            const leadsDemoBtn = document.getElementById('leads');
-            const leadsCodeBtn = document.getElementById('leads-code');
-            const randomNumDemoBtn=document.getElementById('randomNum');
-            const randomNumCodeBtn=document.getElemntById('randomNum-code');
-
-            function viewLiveDemo(projectUrl) {
-                window.open(projectUrl, '_blank');
-            }
-
-            function viewCode(codeUrl) {
-                window.open(codeUrl, '_blank');
-            }
-
-            // Add click event listeners for each button
-            tempDemoBtn.addEventListener('click', () => viewLiveDemo(''));
-            tempCodeBtn.addEventListener('click', () => viewCode('https://github.com/AbereTruphenah/javascript-hands-on/tree/main/TEMPERATURE%20CONVERTOR'));
-
-            palindromeDemoBtn.addEventListener('click', () => viewLiveDemo(''));
-            palindromeCodeBtn.addEventListener('click', () => viewCode('https://github.com/AbereTruphenah/javascript-hands-on/tree/main/PALINDROME%20CHECKER'));
-
-            bulbDemoBtn.addEventListener('click', () => viewLiveDemo(''));
-            bulbCodeBtn.addEventListener('click', () => viewCode('https://github.com/AbereTruphenah/javascript-hands-on/blob/main/LIGHT%20BULB/index.html'));
-
-            leadsDemoBtn.addEventListener('click', () => viewLiveDemo('https://your-leads-demo-url.com'));
-            leadsCodeBtn.addEventListener('click', () => viewCode('https://github.com/AbereTruphenah/javascript-hands-on/blob/main/LEADS%20TRACKER/index.html'));
-
-            randomNumDemoBtn.addEventListener('click', () => viewLiveDemo(''));
-            randomNumCodeBtn.addEventListener('click', () => viewCode('https://github.com/AbereTruphenah/javascript-hands-on/blob/main/EXERCISES/Random%20Number/random-number-generator.html'));
-        </script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const experiences = [
+                      {
+                        role: "ICT Intern (Software Development, Networking & Computer Hardware)",
+                        company: "Dedan Kimathi University of Technology",
+                        duration: "January, 2024 - March, 2024",
+                        responsibilities: "Developed an online health management system",
+                      },
+                      {
+                        role: "ICT Intern",
+                        company: "Kenya Tea Development Agency Ltd",
+                        duration: "January, 2024 - March, 2024",
+                        responsibilities: "",
+                      },
+                      {
+                        role: "Networking Attachee",
+                        company: "Dedan Kimathi University of Technology",
+                        duration: "January, 2024 - March, 2024",
+                        responsibilities: "",
+                      },
+                      {
+                        role: "Networking Attachee",
+                        company: "Dedan Kimathi University of Technology",
+                        duration: "January, 2024 - March, 2024",
+                        responsibilities: "",
+                      },
+                    ];
+                  
+                    const experienceContent = document.querySelector('.experience-content');
+                  
+                    experiences.forEach(experience => {
+                      const experienceItem = document.createElement('div');
+                      experienceItem.classList.add('experience-item');
+                  
+                      experienceItem.innerHTML = `
+                        <h3>${experience.role}</h3>
+                        <p><strong>Company:</strong> ${experience.company}</p>
+                        <p><strong>Duration:</strong> ${experience.duration}</p>
+                        <p><strong>Responsibilities:</strong> ${experience.responsibilities}</p>
+                      `;
+                  
+                      experienceContent.appendChild(experienceItem);
+                    });
+                  });
+                  
+                  document.addEventListener('DOMContentLoaded', () => {
+                    const projects = [
+                      {
+                        title: "Temperature Converter",
+                        description: "An app for converting temperature from Celcius to Fahrenheit and vice versa.",
+                        techStack: "JavaScript, HTML, CSS",
+                        demoLink: "#",
+                        codeLink: "https://github.com/AbereTruphenah/javascript-hands-on/tree/main/TEMPERATURE%20CONVERTOR",
+                      },
+                      {
+                        title: "Palindrome Checker",
+                        description: "An application for checking if a word is a palindrome.",
+                        techStack: "HTML, CSS, JavaScript",
+                        demoLink: "#",
+                        codeLink: "https://github.com/AbereTruphenah/javascript-hands-on/tree/main/PALINDROME%20CHECKER",
+                      },
+                      {
+                        title: "Random Number Generator",
+                        description: "An application that generates random number between 0 and 100 (exclusive).",
+                        techStack: "HTML, CSS, JavaScript",
+                        demoLink: "#",
+                        codeLink: "https://github.com/AbereTruphenah/javascript-hands-on/blob/main/EXERCISES/Random%20Number/random-number-generator.html",
+                      },
+                      {
+                        title: "Light Bulb ON and OFF",
+                        description: "An application for switching a light on and off.",
+                        techStack: "JavaScript, HTML, CSS",
+                        demoLink: "#",
+                        codeLink: "https://github.com/AbereTruphenah/javascript-hands-on/blob/main/LIGHT%20BULB/index.html",
+                      },
+                      {
+                        title: "Leads Tracker",
+                        description: "An application for adding and deleting leads.",
+                        techStack: "JavaScript, HTML, CSS",
+                        demoLink: "https://your-leads-demo-url.com",
+                        codeLink: "https://github.com/AbereTruphenah/javascript-hands-on/blob/main/LEADS%20TRACKER/index.html",
+                      },
+                    ];
+                  
+                    const projectsContent = document.querySelector('.projects-content');
+                  
+                    projects.forEach(project => {
+                      const projectCard = document.createElement('div');
+                      projectCard.classList.add('project-card');
+                  
+                      projectCard.innerHTML = `
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                        <p><strong>Tech Stack:</strong> ${project.techStack}</p>
+                        <div class="buttons">
+                        <a href="${project.demoLink}" target="_blank" rel="noopener noreferrer"class="button" id="demo-link">Live Demo</a>
+                        <a href="${project.codeLink}" target="_blank" rel="noopener noreferrer" class="button" id="code-link">View Code</a>
+                        </div>
+                      `;
+                  
+                      projectsContent.appendChild(projectCard);
+                    });
+                  });
+                  
+                  const contactForm = document.querySelector('.contact-me');
+                  
+                  contactForm.addEventListener('submit', function (event) {
+                    event.preventDefault();
+                  
+                    const viewerEmail = document.getElementById('viewer-email').value;
+                    const message = document.getElementById('message').value;
+                  
+                    if (viewerEmail && message) {
+                      // Handle the form submission
+                      alert(`Message sent from ${viewerEmail}: ${message}`);
+                  
+                      // Reset form after submission
+                      contactForm.reset();
+                    } else {
+                      alert('Please fill out both the email and message fields.');
+                    }
+                  });
+            </script>
     </body>
 </html>
